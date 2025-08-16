@@ -50,10 +50,10 @@ It runs in the browser and provides multiple calculation features with a clean U
 
 ## 📂 Project Structure
 
-📦 Smart Calculator
-├── index.html # Main UI layout
-├── script.js # Calculator logic & menu prompts
-└── README.md # Project documentation
+📦 Smart Calculator <br>
+├── index.html # Main UI layout <br>
+├── script.js # Calculator logic & menu prompts <br>
+└── README.md # Project documentation <br>
 
 
 ---
