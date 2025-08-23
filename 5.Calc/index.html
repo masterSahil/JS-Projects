@@ -11,56 +11,65 @@
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-400 to-purple-600 p-5">
 
     <div
-        class="w-full max-w-sm p-6 rounded-3xl border border-white/20 bg-white/10 backdrop-blur-2xl shadow-2xl animate-[slideIn_0.8s_cubic-bezier(0.175,0.885,0.32,1.275)]">
+        class="w-full max-w-md p-6 rounded-3xl border border-white/20 bg-white/10 backdrop-blur-2xl shadow-2xl animate-[slideIn_0.8s_cubic-bezier(0.175,0.885,0.32,1.275)]">
 
         <input id="display" type="text" readonly
             class="w-full h-20 bg-black/30 text-white text-4xl font-semibold text-right px-5 mb-5 rounded-2xl shadow-inner outline-none focus:ring-2 focus:ring-white/30 transition" />
 
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-4 gap-4">
 
             <input type="button" value="C" onclick="clearDisplay()"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:from-pink-500 hover:to-purple-600 hover:shadow-xl transition" />
-
-            <input type="button" value="%" onclick="addToDisplay('%')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:from-purple-600 hover:to-indigo-700 hover:shadow-xl transition" />
-            <input type="button" value="/" onclick="addToDisplay('/')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white  shadow-md hover:from-purple-600 hover:to-indigo-700 hover:shadow-xl transition" />
-
-            <input type="button" value="7" onclick="addToDisplay('7')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
-            <input type="button" value="8" onclick="addToDisplay('8')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
-            <input type="button" value="9" onclick="addToDisplay('9')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
-
-            <input type="button" value="4" onclick="addToDisplay('4')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
-            <input type="button" value="5" onclick="addToDisplay('5')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
-            <input type="button" value="6" onclick="addToDisplay('6')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
+            <input type="button" value="Even/Odd" onclick="evenOddCheck()"
+                class="col-span-3 h-16 rounded-xl text-2xl font-semibold bg-blue-900 text-white shadow-md hover:shadow-xl transition" />
 
             <input type="button" value="1" onclick="addToDisplay('1')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
             <input type="button" value="2" onclick="addToDisplay('2')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
             <input type="button" value="3" onclick="addToDisplay('3')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+
+            <input type="button" value="4" onclick="addToDisplay('4')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+            <input type="button" value="5" onclick="addToDisplay('5')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+            <input type="button" value="6" onclick="addToDisplay('6')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+
+            <input type="button" value="7" onclick="addToDisplay('7')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+            <input type="button" value="8" onclick="addToDisplay('8')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+            <input type="button" value="9" onclick="addToDisplay('9')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
 
             <input type="button" value="0" onclick="addToDisplay('0')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+                
+            <input type="button" value="%" onclick="addToDisplay('%')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
+            <input type="button" value="*" onclick="addToDisplay('*')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
+            
             <input type="button" value="." onclick="addToDisplay('.')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border border-gray-200 shadow hover:from-gray-100 hover:to-gray-200 transition" />
-
-            <input type="button" value="=" onclick="calculate()"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:from-sky-500 hover:to-blue-700 hover:shadow-xl transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-gradient-to-br from-white to-gray-100 text-gray-800 border shadow hover:shadow-xl transition" />
+            <input type="button" value="/" onclick="addToDisplay('/')"
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
 
             <input type="button" value="+" onclick="addToDisplay('+')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white  shadow-md hover:from-purple-600 hover:to-indigo-700 hover:shadow-xl transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
+            <input type="button" value="=" onclick="calculate()"
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
             <input type="button" value="-" onclick="addToDisplay('-')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white  shadow-md hover:from-purple-600 hover:to-indigo-700 hover:shadow-xl transition" />
-            <input type="button" value="*" onclick="addToDisplay('*')"
-                class="h-16 rounded-xl text-2xl font-semibold bg-white  shadow-md hover:from-purple-600 hover:to-indigo-700 hover:shadow-xl transition" />
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
+
+            <input type="button" value="x²" onclick="square()"
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
+            <input type="button" value="x³" onclick="cube()"
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
+            <input type="button" value="Fact" onclick="factorial()"
+                class="h-16 rounded-xl text-2xl font-semibold bg-white shadow-md hover:shadow-xl transition" />
         </div>
     </div>
 
@@ -68,15 +77,51 @@
         function addToDisplay(value) {
             document.getElementById("display").value += value;
         }
+
         function clearDisplay() {
             document.getElementById("display").value = "";
         }
+
         function calculate() {
             try {
-                document.getElementById("display").value = eval(document.getElementById("display").value);
+                document.getElementById("display").value =
+                    eval(document.getElementById("display").value);
             } catch {
                 document.getElementById("display").value = "Error";
             }
+        }
+
+        function square() {
+            let val = document.getElementById("display").value;
+            document.getElementById("display").value = val * val;
+        }
+
+        function cube() {
+            let val = document.getElementById("display").value;
+            document.getElementById("display").value = val * val * val;
+        }
+
+        function factorial() {
+            let val = document.getElementById("display").value;
+            if (val < 0) {
+                document.getElementById("display").value = "Error";
+                return;
+            }
+            let fact = 1;
+            for (let i = 1; i <= val; i++) {
+                fact *= i;
+            }
+            document.getElementById("display").value = fact;
+        }
+
+        function evenOddCheck() {
+            let val = Number(document.getElementById("display").value);
+            if (isNaN(val)) {
+                document.getElementById("display").value = "Error";
+                return;
+            }
+            document.getElementById("display").value =
+                val % 2 === 0 ? "Even" : "Odd";
         }
     </script>
 </body>
