@@ -31,10 +31,10 @@ Smart-Image-Slider/ <br>
 ## 🖼️ Screenshots  
 
 ### 🎯 Main Output  
-[main output](screenshot/main.png)
+![main output](screenshot/main.png)
 
 ### 🛠️ Console Logs  
-[console output](screenshot/console.png)
+![console output](screenshot/console.png)
 
 ---
 
@@ -44,25 +44,25 @@ Smart-Image-Slider/ <br>
 2. Open index.html in any browser.
 
 Use:
-    -> ⏪ Prev / Next buttons to navigate slides.
-    -> ▶️ Auto Play to start automatic slideshow.
-    -> ⏸️ Pause to stop slideshow.
+    <br> -> ⏪ Prev / Next buttons to navigate slides.
+    <br> -> ▶️ Auto Play to start automatic slideshow.
+    <br> -> ⏸️ Pause to stop slideshow.
 
 Add Slide Section to insert a new image with a caption.
 
 
 ## 📌 Tech Stack
 
-HTML5 – Structure
-CSS3 – Styling with glassmorphism & animations
-JavaScript (Vanilla) – Functionality & Interactions
-Font Awesome – Icons
+HTML5 – Structure <br>
+CSS3 – Styling with glassmorphism & animations <br>
+JavaScript (Vanilla) – Functionality & Interactions <br>
+Font Awesome – Icons <br>
 
 
 ## 👨‍💻 Author
 
-Sahil Master
-📌 Project Owner
+Sahil Master <br>
+📌 Project Owner <br>
 
 
 ## 📜 License
