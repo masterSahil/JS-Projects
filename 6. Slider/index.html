@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Image Slider</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" href="https://lh5.googleusercontent.com/proxy/kFmsaYcAseT26REMjZMRUBXC4MLLMwUefZdGanY2I2hHPVaRSfEnwplnjMIGpid_c7iM9WkTOZwXjDakS9zqtKMP4c1IOooX7j-1ChCuutzVyBvI4XTq09L4zbfIzuFL=s0-d" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="slider-container">
+    <div class="slider">
+      <img id="slider-img" src="./imgs/nature.png"
+        alt="Slide">
+      <div class="slider-overlay">
+        <div class="caption" id="caption">Beautiful Mountain Sunset</div>
+        <div class="counter" id="counter">Slide 1 of 3</div>
+      </div>
+      <div class="loading" id="loading">Loading...</div>
+    </div>
+
+    <button class="nav-arrows prev-arrow" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="nav-arrows next-arrow" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <div class="controls-section">
+      <div class="controls">
+        <button class="btn" onclick="startAutoPlay()">
+          <i class="fa-solid fa-play"></i> Auto Play
+        </button>
+        <button class="btn pause" onclick="stopAutoPlay()">
+          <i class="fa-solid fa-pause"></i> Pause
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="add-slide-section">
+    <h3>Add a New Masterpiece</h3>
+    <div class="input-group">
+      <input type="text" class="input" id="img-url" placeholder="Image URL">
+      <input type="text" class="input" id="img-caption" placeholder="Caption">
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="addSlide()">
+        <i class="fa-solid fa-plus"></i> Add Slide
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
