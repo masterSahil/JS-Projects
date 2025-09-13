@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - Furniture AR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .container-content {
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInSlideUp 0.8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        @keyframes fadeInSlideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .form-input, .form-select, .form-textarea {
+            transition: all 0.3s ease-in-out;
+            border-color: #d1d5db;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+            border-color: #3b82f6;
+        }
+        .floating-label-input-group {
+            position: relative;
+        }
+        .floating-label {
+            position: absolute;
+            top: 14px;
+            left: 1rem;
+            color: #9ca3af;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .floating-label-input-group input:focus + .floating-label,
+        .floating-label-input-group input:not(:placeholder-shown) + .floating-label,
+        .floating-label-input-group textarea:focus + .floating-label,
+        .floating-label-input-group textarea:not(:placeholder-shown) + .floating-label {
+            transform: translateY(-26px) scale(0.8);
+            background-color: #f7f9fc;
+            padding: 0 4px;
+            color: #3b82f6;
+            left: 0.75rem;
+        }
+        .cta-button {
+            background-image: linear-gradient(135deg, #4c51bf 0%, #6366f1 100%);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(76, 81, 191, 0.4);
+        }
+        .file-upload-zone {
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .file-upload-zone:hover {
+            background-color: #f3f4f6;
+            border-color: #93c5fd;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <nav class="bg-white shadow-lg sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-indigo-700 tracking-wide">
+                Furniture AR
+            </h1>
+            <div class="space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-700 transition duration-300">Home</a>
+                <a href="add.html" class="text-indigo-700 font-semibold border-b-2 border-indigo-700 pb-1">Add Product</a>
+                <a href="update.html" class="text-gray-600 hover:text-indigo-700 transition duration-300">Update Product</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="max-w-4xl mx-auto py-16 px-6 container-content">
+        <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4 md:mb-0">
+                Add New Product ✨
+            </h2>
+            <p class="text-lg text-gray-600">
+                Expand your collection and bring new pieces to life.
+            </p>
+        </div>
+
+        <div class="bg-white p-8 shadow-xl rounded-2xl border border-gray-200">
+            <form class="space-y-8">
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <div class="floating-label-input-group">
+                        <input type="text" id="product-id" class="form-input w-full border border-gray-300 rounded-lg p-3 pt-5 placeholder-transparent" placeholder="Enter product ID">
+                        <label for="product-id" class="floating-label">Product ID</label>
+                    </div>
+                    
+                    <div class="floating-label-input-group">
+                        <input type="text" id="product-name" class="form-input w-full border border-gray-300 rounded-lg p-3 pt-5 placeholder-transparent" placeholder="Enter product name">
+                        <label for="product-name" class="floating-label">Product Name</label>
+                    </div>
+
+                    <div class="floating-label-input-group">
+                        <input type="number" id="price" class="form-input w-full border border-gray-300 rounded-lg p-3 pt-5 placeholder-transparent" placeholder="Enter price">
+                        <label for="price" class="floating-label">Price ($)</label>
+                    </div>
+
+                    <div class="floating-label-input-group">
+                        <input type="text" id="dimensions" class="form-input w-full border border-gray-300 rounded-lg p-3 pt-5 placeholder-transparent" placeholder="e.g. 200x150x80 cm">
+                        <label for="dimensions" class="floating-label">Dimensions</label>
+                    </div>
+
+                    <div class="floating-label-input-group">
+                        <input type="text" id="material" class="form-input w-full border border-gray-300 rounded-lg p-3 pt-5 placeholder-transparent" placeholder="e.g. Wood, Metal, Fabric">
+                        <label for="material" class="floating-label">Material</label>
+                    </div>
+
+                    <div class="floating-label-input-group">
+                        <input type="number" id="stock" class="form-input w-full border border-gray-300 rounded-lg p-3 pt-5 placeholder-transparent" placeholder="Enter available stock">
+                        <label for="stock" class="floating-label">Stock</label>
+                    </div>
+
+                    <div>
+                        <label for="category" class="block text-gray-700 font-semibold mb-2">Category</label>
+                        <select id="category" class="form-select w-full border border-gray-300 rounded-lg p-3 bg-gray-50 focus:bg-white transition-colors duration-300">
+                            <option>Sofa</option>
+                            <option>Chair</option>
+                            <option>Table</option>
+                            <option>Bed</option>
+                            <option>Cabinet</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="border-gray-200">
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <div class="floating-label-input-group">
+                        <textarea id="description" class="form-textarea w-full border border-gray-300 rounded-lg p-3 pt-5 placeholder-transparent resize-none" rows="4" placeholder="Enter product description"></textarea>
+                        <label for="description" class="floating-label">Description</label>
+                    </div>
+
+                    <div>
+                        <label for="image-upload" class="block text-gray-700 font-semibold mb-2">Upload Product Images</label>
+                        <div class="file-upload-zone flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                            <svg class="h-8 w-8 text-gray-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                            </svg>
+                            <span class="text-gray-500">Drag & Drop your files here or <br><span class="text-blue-600 font-medium">Browse</span> to upload</span>
+                            <input type="file" id="image-upload" class="hidden" multiple>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button w-full text-white font-bold py-4 rounded-full text-xl shadow-lg focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50">
+                    Add Product
+                </button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
