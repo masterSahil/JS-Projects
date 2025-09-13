@@ -30,11 +30,11 @@ It helps users **add tasks, categorize them, set due dates, and track progress**
 
 ## 📂 Project Structure
 
-project-folder/
-│
-├── index.html # Main page (UI + Tailwind classes)
-├── script.js # App logic (add, search, filter tasks)
-└── README.md # Documentation
+project-folder/ <br>
+│ <br>
+├── index.html # Main page (UI + Tailwind classes) <br>
+├── script.js # App logic (add, search, filter tasks) <br>
+└── README.md # Documentation <br>
 
 
 ---
