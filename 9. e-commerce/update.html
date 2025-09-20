@@ -11,21 +11,14 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
-
-    .form-input,
-    .form-select,
-    .form-textarea {
+    .form-input, .form-select, .form-textarea {
       border-color: #e2e8f0;
     }
-
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus {
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
       outline: none;
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
       border-color: #3b82f6;
     }
-
     .ar-preview-btn {
       background-image: linear-gradient(135deg, #43e97b 0%, #3bb2b8 100%);
     }
@@ -37,7 +30,9 @@
   <!-- Navbar -->
   <nav class="bg-white shadow-md sticky top-0 z-20">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl md:text-3xl font-bold text-indigo-700 tracking-wide">Furniture AR</h1>
+      <a href="index.html">
+        <h1 class="text-2xl md:text-3xl font-bold text-indigo-700 tracking-wide">Furniture AR</h1>
+      </a>
       <div class="space-x-6 text-base md:text-lg">
         <a href="index.html" class="text-gray-600 hover:text-indigo-700 transition duration-300">Home</a>
         <a href="add.html" class="text-gray-600 hover:text-indigo-700 transition duration-300 ">Add Product</a>
@@ -110,10 +105,13 @@
             <div>
               <label class="block text-gray-600 font-semibold mb-2">Category</label>
               <select id="category" class="form-select w-full border rounded-lg p-3 bg-gray-50">
+                <option disabled selected>Select category</option>
                 <option>Sofa</option>
                 <option>Chair</option>
                 <option>Table</option>
                 <option>Bed</option>
+                <option>Cabinet</option>
+                <option>Other</option>
               </select>
             </div>
             
