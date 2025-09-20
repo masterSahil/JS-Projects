@@ -63,6 +63,7 @@ furniture-ar
  ┣ 📜 cart.html          # Cart management
  ┣ 📜 README.md          # Documentation
  ┣ 📂 assets/            # (Optional) store page images/screenshots
+ ```
 
 
 ## ⚡ How It Works
