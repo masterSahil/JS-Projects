@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,27 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
-    .form-input, .form-select, .form-textarea {
+
+    .form-input,
+    .form-select,
+    .form-textarea {
       border-color: #e2e8f0;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
       outline: none;
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
       border-color: #3b82f6;
     }
+
     .ar-preview-btn {
       background-image: linear-gradient(135deg, #43e97b 0%, #3bb2b8 100%);
     }
   </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
 
   <!-- Navbar -->
@@ -46,69 +55,75 @@
 
       <!-- Empty state -->
       <div id="emptyState" class="hidden text-center py-20">
-        <img src="https://cdn-icons-png.flaticon.com/512/4076/4076507.png" alt="No products" class="w-28 mx-auto mb-6 opacity-70">
+        <img src="https://cdn-icons-png.flaticon.com/512/4076/4076507.png" alt="No products"
+          class="w-28 mx-auto mb-6 opacity-70">
         <h3 class="text-xl font-semibold text-gray-600 mb-2">No Products Available</h3>
         <p class="text-gray-500 mb-6">You haven’t added any products yet. Start by adding a new one.</p>
-        <a href="add.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">Add Product</a>
+        <a href="add.html" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700">Add
+          Product</a>
       </div>
 
       <!-- Update Form -->
       <form id="updateForm" class="space-y-8 hidden">
-        <!-- Image preview -->
-        <div class="flex items-center justify-center">
-          <div class="w-full h-48 bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
-            <img id="previewImage" src="https://via.placeholder.com/400x300.png?text=Product+Image+Preview" alt="Product Preview" class="object-cover w-full h-full">
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="flex flex-col">
+            <div class="w-full h-80 bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
+              <img id="previewImage" src="https://via.placeholder.com/400x300.png?text=Product+Image+Preview"
+                alt="Product Preview" class="object-cover w-full h-full">
+            </div>
+
+            <div>
+              <label class="block text-gray-600 font-semibold mb-2">Image URL</label>
+              <input type="text" id="image" class="form-input w-full border rounded-lg p-3">
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <label class="block text-gray-600 font-semibold mb-2">Product Name</label>
+              <input type="text" id="productName" class="form-input w-full border rounded-lg p-3">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-gray-600 font-semibold mb-2">Price ($)</label>
+                <input type="number" id="price" class="form-input w-full border rounded-lg p-3">
+              </div>
+              <div>
+                <label class="block text-gray-600 font-semibold mb-2">Stock</label>
+                <input type="number" id="stock" class="form-input w-full border rounded-lg p-3">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-gray-600 font-semibold mb-2">Dimensions (LxWxH)</label>
+                <input type="text" id="dimensions" class="form-input w-full border rounded-lg p-3">
+              </div>
+              <div>
+                <label class="block text-gray-600 font-semibold mb-2">Material</label>
+                <input type="text" id="material" class="form-input w-full border rounded-lg p-3">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-gray-600 font-semibold mb-2">Category</label>
+              <select id="category" class="form-select w-full border rounded-lg p-3 bg-gray-50">
+                <option>Sofa</option>
+                <option>Chair</option>
+                <option>Table</option>
+                <option>Bed</option>
+              </select>
+            </div>
+            
           </div>
         </div>
 
-        <hr class="border-gray-200">
-
-        <!-- Product details -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div>
-            <label class="block text-gray-600 font-semibold mb-2">Product Name</label>
-            <input type="text" id="productName" class="form-input w-full border rounded-lg p-3">
-          </div>
-
-          <div>
-            <label class="block text-gray-600 font-semibold mb-2">Price ($)</label>
-            <input type="number" id="price" class="form-input w-full border rounded-lg p-3">
-          </div>
-
-          <div>
-            <label class="block text-gray-600 font-semibold mb-2">Stock</label>
-            <input type="number" id="stock" class="form-input w-full border rounded-lg p-3">
-          </div>
-
-          <div>
-            <label class="block text-gray-600 font-semibold mb-2">Dimensions (LxWxH)</label>
-            <input type="text" id="dimensions" class="form-input w-full border rounded-lg p-3">
-          </div>
-
-          <div>
-            <label class="block text-gray-600 font-semibold mb-2">Material</label>
-            <input type="text" id="material" class="form-input w-full border rounded-lg p-3">
-          </div>
-
-          <div>
-            <label class="block text-gray-600 font-semibold mb-2">Category</label>
-            <select id="category" class="form-select w-full border rounded-lg p-3 bg-gray-50">
-              <option>Sofa</option>
-              <option>Chair</option>
-              <option>Table</option>
-              <option>Bed</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
+        <div class="w-full">
           <label class="block text-gray-600 font-semibold mb-2">Description</label>
-          <textarea id="description" class="form-textarea w-full border rounded-lg p-3 resize-none" rows="4"></textarea>
-        </div>
-
-        <div>
-          <label class="block text-gray-600 font-semibold mb-2">Image URL</label>
-          <input type="text" id="image" class="form-input w-full border rounded-lg p-3">
+          <textarea id="description" class="form-textarea w-full border rounded-lg p-3 resize-none"
+            rows="4"></textarea>
         </div>
 
         <button type="submit" class="ar-preview-btn w-full text-white font-bold py-4 rounded-full text-xl shadow-lg">
@@ -216,4 +231,5 @@
     loadProducts();
   </script>
 </body>
+
 </html>
