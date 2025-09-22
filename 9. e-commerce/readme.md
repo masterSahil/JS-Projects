@@ -103,12 +103,5 @@ furniture-ar
 - **Cart Page**
     ![Cart Page](assets/images/cart.png)
 
-## 🔮 Future Improvements
-- Implement search and filter by category, price, material.
-- Add sorting options (by price, stock).
-- Persist data to a real backend database (MongoDB / Firebase).
-- Implement authentication for admin to manage products.
-- Add AR model preview integration (e.g., 3D model view in AR).
-
 ## 👨‍💻 Author
 Built with ❤️ by Master Sahil
