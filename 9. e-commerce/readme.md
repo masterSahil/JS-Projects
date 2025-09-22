@@ -89,19 +89,19 @@ furniture-ar
 ## 📸 Screenshots
 
 - **Home Page**
-    ![Home Page](images/home.png)
+    ![Home Page](assets/images/home.png)
 
 - **Add Product Page**
-    ![Add Product Page](images/add.png)
+    ![Add Product Page](assets/images/add.png)
 
 - **Update Product Page**
-    ![Update Page](images/update.png)
+    ![Update Page](assets/images/update.png)
 
 - **Preview Page**
-    ![Preview Page](images/product.png)
+    ![Preview Page](assets/images/product.png)
 
 - **Cart Page**
-    ![Cart Page](images/cart.png)
+    ![Cart Page](assets/images/cart.png)
 
 ## 🔮 Future Improvements
 - Implement search and filter by category, price, material.
