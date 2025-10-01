@@ -78,7 +78,7 @@ global-covid-tracker/ <br>
 ├── index.html            # Main HTML file <br>
 ├── assets/ <br>
 │   └── script.js         # JavaScript logic for fetching and rendering data <br>
-│   └── imgs              # App screenshot
+│   └── imgs              # App screenshot <br>
 └── README.md             # Project documentation <br>
 
 ---
