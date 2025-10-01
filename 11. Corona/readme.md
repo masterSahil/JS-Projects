@@ -43,8 +43,12 @@ No backend setup is required since it fetches data directly from the **[disease.
 
 ## 📸 Screenshot
 
+### Covid 19 Tracker
 ![App Screenshot](./assets/imgs/ss1.png)  
-![App Screenshot](./assets/imgs/ss2.png)  
+![App Screenshot](./assets/imgs/ss2.png) 
+
+### Error Handling Ui
+![Err UI](./assets/imgs/err.png) 
 
 ---
 
