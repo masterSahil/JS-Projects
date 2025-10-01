@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global COVID-19 Tracker</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (for professional-looking icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom scrollbar styling for the country cards grid */
+        #country-cards-grid-wrapper::-webkit-scrollbar {
+            width: 8px;
+        }
+        #country-cards-grid-wrapper::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border-radius: 4px;
+        }
+        #country-cards-grid-wrapper::-webkit-scrollbar-track {
+            background-color: #1f2937;
+        }
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-4 sm:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="text-center mb-8 sm:mb-12">
+            <h1 class="text-4xl font-extrabold text-indigo-400">
+                Global COVID-19 Dashboard
+            </h1>
+            <p id="last-updated" class="text-gray-400 mt-2 text-sm">
+                Fetching latest data...
+            </p>
+        </header>
+
+        <!-- Global Stats Dashboard -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 text-gray-200 flex items-center">
+                <i data-lucide="globe" class="w-6 h-6 mr-2 text-indigo-400"></i> Global Summary
+            </h2>
+            <div id="global-stats" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Stat Cards will be injected here -->
+                <div class="animate-pulse bg-gray-800 h-28 rounded-xl"></div>
+                <div class="animate-pulse bg-gray-800 h-28 rounded-xl"></div>
+                <div class="animate-pulse bg-gray-800 h-28 rounded-xl hidden lg:block"></div>
+                <div class="animate-pulse bg-gray-800 h-28 rounded-xl hidden lg:block"></div>
+            </div>
+        </section>
+
+        <!-- Country Data Section (Card View) -->
+        <section>
+            <h2 class="text-2xl font-bold mb-6 text-gray-200 flex items-center">
+                <i data-lucide="map" class="w-6 h-6 mr-2 text-indigo-400"></i> All Countries Data
+            </h2>
+
+            <!-- Country Cards Grid Wrapper -->
+            <div id="country-cards-grid-wrapper" class="bg-gray-800/50 p-4 rounded-xl shadow-xl overflow-y-auto max-h-[70vh]">
+                <div id="country-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <!-- Country Cards will be injected here -->
+                    <div class="col-span-full text-center py-10 text-gray-400">Loading country data...</div>
+                </div>
+            </div>
+
+            <div id="error-message" class="hidden mt-4 p-4 bg-red-800 text-red-100 rounded-lg">
+                An error occurred while fetching data. Please try again later.
+            </div>
+        </section>
+
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
