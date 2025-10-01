@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-4 font-sans">
+
+  <div id="mainContainer"
+    class="bg-gray-800 shadow-2xl flex flex-col gap-6 sm:flex-row justify-evenly rounded-2xl p-6 sm:p-8 w-full max-w-3xl transition-all duration-500">
+
+    <!-- Input Section -->
+    <div id="inputSection" class="flex flex-col justify-center  sm:w-1/2 max-w-[20rem]">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-blue-400 text-center mb-2">
+        🌌 Weather Checker
+      </h1>
+      <p class="text-gray-400 text-sm sm:text-base text-center mb-6 sm:mb-8">
+        Enter coordinates to instantly check live weather updates.
+      </p>
+
+      <div class="mb-4">
+        <label class="block text-gray-300 font-semibold mb-1">Latitude:</label>
+        <input type="number" id="lat" step="0.0001" placeholder="21.1702"
+          class="w-full mt-1 p-3 border border-gray-700 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition appearance-none">
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-300 font-semibold mb-1">Longitude:</label>
+        <input type="number" id="lon" step="0.0001" placeholder="72.8311"
+          class="w-full mt-1 p-3 border border-gray-700 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition appearance-none">
+      </div>
+
+      <button id="getWeatherBtn"
+        class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-lg hover:bg-blue-700 transition duration-300 transform shadow-lg hover:shadow-blue-800/40">
+        Get Weather
+      </button>
+    </div>
+
+    <!-- Weather Section (default visible as placeholder) -->
+    <div id="weatherCard" class="mt-8 sm:mt-0 sm:w-1/2">
+      <h2 class="text-xl sm:text-2xl font-bold text-blue-400 mb-5 text-center">Current Weather</h2>
+
+      <!-- Default Placeholder (before API fetch) -->
+      <div id="defaultWeather" class="flex flex-col items-center justify-center p-6 bg-gray-700/50 rounded-lg">
+        <img src="https://openweathermap.org/img/wn/02d@2x.png" class="w-24 h-24 mb-3 opacity-70" alt="Default Weather">
+        <p class="text-gray-300 font-medium text-center">Weather info will appear here...</p>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div id="loadingSpinner" class="hidden flex justify-center items-center py-6">
+        <div class="w-12 h-12 border-4 border-blue-400 border-dashed rounded-full animate-spin"></div>
+      </div>
+
+      <!-- Weather Display -->
+      <div id="weatherContent" class="hidden">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center mb-6 p-4 bg-gray-700/50 rounded-lg shadow-inner transition">
+          <img id="weatherIcon" class="w-28 h-28 mb-2 sm:mb-0 sm:mr-4" alt="Weather Icon">
+          <p id="weatherDescription"
+            class="text-lg sm:text-xl font-semibold text-white capitalize text-center sm:text-left"></p>
+        </div>
+
+        <!-- Weather Info Grid -->
+        <div id="weatherResult"
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-lg bg-gray-700 text-gray-200 text-sm sm:text-md border border-gray-600">
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
